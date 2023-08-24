@@ -12,10 +12,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: const MyHomePage(),
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+          colorScheme: const ColorScheme(
+              brightness: Brightness.dark,
+              primary: Color.fromARGB(255, 33, 124, 243),
+              onPrimary: Colors.white,
+              secondary: Colors.black,
+              onSecondary: Colors.white,
+              error: Colors.red,
+              onError: Colors.white,
+              background: Color.fromARGB(255, 0, 0, 0),
+              onBackground: Colors.white,
+              surface: Colors.white,
+              onSurface: Colors.black)),
     );
   }
 }
@@ -29,8 +39,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: LoginScreen(),
-    );
+    return const Scaffold(body: LoginScreen());
   }
 }
