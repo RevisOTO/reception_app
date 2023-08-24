@@ -12,7 +12,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      bottomNavigationBar: BottomNavigationBar(items: []),
+      //bottomNavigationBar: BottomNavigationBar(items: []),
       body: Column(children: [
         const Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Text("Home"),
