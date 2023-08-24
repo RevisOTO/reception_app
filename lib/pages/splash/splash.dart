@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reception_app/data/network/entities/registration.dart';
 
 import '../../blocs/auth/auth_bloc.dart';
-import '../../widgets/loader.dart';
+ 
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -15,7 +16,7 @@ class SplashPage extends StatelessWidget {
           if (state is AuthError) {
             buildErrorLayout(context);
           } else if (state is AuthValidatedUser) {
-            Navigator.of(context).pushNamedAndRemoveUntil('/main', arguments: "fake user name",(r) => false);
+            Navigator.of(context).pushNamedAndRemoveUntil('/inspection', arguments: Registration(),(r) => false);
           } else if (state is AuthInValidatedUser) {
             Navigator.of(context).pushNamedAndRemoveUntil('/login',(r) => false);
           }
@@ -25,33 +26,33 @@ class SplashPage extends StatelessWidget {
              BlocProvider.of<AuthBloc>(context).add(AuthUser());
           }
           if (state is AuthLoading) {
-            return LoadingWidget(child: body(context));
+             return body(context,true);
           } else {
-            return body(context);
+            return body(context,true);
           }
         },
       ),
     );
   }
 
-  Widget body(BuildContext context) => Center(
+  Widget body(BuildContext context, bool isLoading) => Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
               color: Colors.white,
               child:
-                  const Image(image: AssetImage('assets/logo_transferr.png'))),
+          const Image(width: 200,height: 200, image: AssetImage('assets/truck.gif'))),
           const SizedBox(
             height: 10,
           ),
           RichText(
               text: TextSpan(children: [
             TextSpan(
-                text: 'Reception',
+                text: 'Truck Track',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 32.00,
+                    fontSize: 48.00,
                     color: Theme.of(context).primaryColor)),
           ])),
           const Text(

@@ -36,13 +36,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       }
       else if (event is AuthUser){
           emit(AuthLoading());
-          var user = await repo.validateSession();
-          if(user != null){
-            emit(AuthValidatedUser(user));
-          }
-          else{
-            emit(AuthInValidatedUser());
-          }
+          emit(AuthValidatedUser(User(userName: "Fake User")));
+          //
+          // var user = await repo.validateSession();
+          // if(user != null){
+          //   emit(AuthValidatedUser(user));
+          // }
+          // else{
+          //   emit(AuthInValidatedUser());
+          // }
       }
 
 
