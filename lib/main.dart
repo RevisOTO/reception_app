@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:reception_app/pages/welcome/welcome.dart';
 import 'pages/login/login.dart';
 
 void main() {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: const MyHomePage(),
       theme: ThemeData(
+          appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
           colorScheme: const ColorScheme(
               brightness: Brightness.dark,
               primary: Color.fromARGB(255, 33, 124, 243),
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
               onSecondary: Colors.white,
               error: Colors.red,
               onError: Colors.white,
-              background: Color.fromARGB(255, 0, 0, 0),
+              background: Color.fromARGB(255, 14, 14, 14),
               onBackground: Colors.white,
               surface: Colors.white,
               onSurface: Colors.black)),
@@ -39,6 +41,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: LoginScreen());
+    return const Scaffold(body: Welcome());
   }
 }
