@@ -4,6 +4,8 @@ import 'package:flutter/painting.dart';
 const baseURL = "http://192.168.0.2:3000/";
 
 double kSpacing = 25.00;
+const backgroundColor = Color(0xffFCFEFC);
+
 
 BorderRadius kBorderRadius = BorderRadius.circular(5.5);
 EdgeInsets kHPadding = const EdgeInsets.symmetric(horizontal: 24.00);

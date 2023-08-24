@@ -1,49 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:reception_app/globals/constants.dart';
-import 'package:reception_app/pages/profile/profile.dart';
-import 'package:reception_app/pages/splash/splash.dart';
-import 'package:reception_app/pages/welcome/welcome.dart';
-import 'pages/login/login.dart';
+import 'package:reception_app/routes/routes.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  //Hive.registerAdapter(TodoAdapter());
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const MyHomePage(),
+      title: 'Truck Track',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
-          colorScheme: ColorScheme(
-              brightness: Brightness.dark,
-              primary: primaryColorBtn,
-              onPrimary: Colors.white,
-              secondary: Colors.black,
-              onSecondary: Colors.white,
-              error: Colors.red,
-              onError: Colors.white,
-              background: Color.fromARGB(255, 14, 14, 14),
-              onBackground: Colors.white,
-              surface: Colors.white,
-              onSurface: Colors.black)),
+        colorSchemeSeed: Colors.lightBlue[800],
+        useMaterial3: true,
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: backgroundColor,
+      ),
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator().generateRoute,
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: ProfilePage());
   }
 }

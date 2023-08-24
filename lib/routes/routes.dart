@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reception_app/blocs/auth/auth_bloc.dart';
+import 'package:reception_app/blocs/inspection/inspection_bloc.dart';
+import 'package:reception_app/data/network/entities/registration.dart';
+import 'package:reception_app/pages/inspection/inspection_page.dart';
 import 'package:reception_app/pages/splash/splash.dart';
 
 class RouteGenerator {
@@ -13,8 +16,9 @@ class RouteGenerator {
 
 
    final AuthBloc _authBloc = AuthBloc();
+   
   // final MainBloc _mainBloc = MainBloc();
-  // final InspectionBloc _inspectBloc = InspectionBloc();
+  final InspectionBloc _inspectBloc = InspectionBloc();
 
   Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -34,16 +38,16 @@ class RouteGenerator {
       //       child: const LoginPage(title: "Login page with overlay"),
       //     ),
       //   );
-      // case '/main':
-      //   if (args is String) {
-      //     return MaterialPageRoute(
-      //       builder: (_) => BlocProvider<MainBloc>.value(
-      //         value: _mainBloc,
-      //         child: MainPage(user: args),
-      //       ),
-      //     );
-      //   }
-      //   return _errorRoute();
+      case '/inspection':
+        if (args is Registration) {
+          return MaterialPageRoute(
+            builder: (_) => BlocProvider<InspectionBloc>.value(
+              value: _inspectBloc,
+              child: InspectionPage(args),
+            ),
+          );
+        }
+        return _errorRoute();
 
     
     

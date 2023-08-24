@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reception_app/pages/login/widgets/buttonRounded.dart';
 
-import '../../globals/constants.dart';
-
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
 
@@ -46,7 +44,7 @@ class _WelcomeState extends State<Welcome> {
             alignment: MainAxisAlignment.start,
             children: [
               RoundedButton(
-                  backgroundColor: primaryColorBtn,
+                  backgroundColor: const Color.fromARGB(255, 33, 124, 243),
                   size: const Size(150, 40),
                   label: const Text("Warehouse",
                       style: TextStyle(
@@ -69,7 +67,7 @@ class _WelcomeState extends State<Welcome> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: RoundedButton(
-                    backgroundColor: primaryColorBtn,
+                    backgroundColor: const Color.fromARGB(255, 33, 124, 243),
                     size: const Size(380, 120),
                     label: const Padding(
                       padding: EdgeInsets.all(15.0),
@@ -115,7 +113,8 @@ class _WelcomeState extends State<Welcome> {
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700)),
                               RoundedButton(
-                                  backgroundColor: primaryColorBtn,
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 33, 124, 243),
                                   size: const Size(190, 30),
                                   label: const Text("10/05/2023 20:50",
                                       style: TextStyle(
@@ -158,7 +157,8 @@ class _WelcomeState extends State<Welcome> {
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700)),
                               RoundedButton(
-                                  backgroundColor: primaryColorBtn,
+                                  backgroundColor:
+                                      const Color.fromARGB(255, 33, 124, 243),
                                   size: const Size(190, 30),
                                   label: const Text("10/05/2023 20:50",
                                       style: TextStyle(
