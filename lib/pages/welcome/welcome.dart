@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reception_app/pages/login/widgets/buttonRounded.dart';
 
+import '../../globals/constants.dart';
+
 class Welcome extends StatefulWidget {
   const Welcome({super.key});
 
@@ -44,13 +46,12 @@ class _WelcomeState extends State<Welcome> {
             alignment: MainAxisAlignment.start,
             children: [
               RoundedButton(
-                  backgroundColor: const Color.fromARGB(255, 33, 124, 243),
+                  backgroundColor: primaryColorBtn,
                   size: const Size(150, 40),
                   label: const Text("Warehouse",
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.w700)),
                   radius: 30,
-                  textColor: Colors.white,
                   onClick: () {}),
               RoundedButton(
                   backgroundColor: Colors.transparent,
@@ -59,7 +60,6 @@ class _WelcomeState extends State<Welcome> {
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.w700)),
                   radius: 30,
-                  textColor: Colors.white,
                   onClick: () {})
             ],
           ),
@@ -69,7 +69,7 @@ class _WelcomeState extends State<Welcome> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                 child: RoundedButton(
-                    backgroundColor: const Color.fromARGB(255, 33, 124, 243),
+                    backgroundColor: primaryColorBtn,
                     size: const Size(380, 120),
                     label: const Padding(
                       padding: EdgeInsets.all(15.0),
@@ -88,7 +88,6 @@ class _WelcomeState extends State<Welcome> {
                       ),
                     ),
                     radius: 25,
-                    textColor: Colors.white,
                     onClick: () {}),
               ),
               Padding(
@@ -116,8 +115,7 @@ class _WelcomeState extends State<Welcome> {
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700)),
                               RoundedButton(
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 33, 124, 243),
+                                  backgroundColor: primaryColorBtn,
                                   size: const Size(190, 30),
                                   label: const Text("10/05/2023 20:50",
                                       style: TextStyle(
@@ -125,7 +123,6 @@ class _WelcomeState extends State<Welcome> {
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700)),
                                   radius: 13,
-                                  textColor: Colors.white,
                                   onClick: () {})
                             ],
                           ),
@@ -134,7 +131,6 @@ class _WelcomeState extends State<Welcome> {
                       ),
                     ),
                     radius: 25,
-                    textColor: Colors.black,
                     onClick: () {}),
               ),
               Padding(
@@ -162,8 +158,7 @@ class _WelcomeState extends State<Welcome> {
                                       color: Colors.white,
                                       fontWeight: FontWeight.w700)),
                               RoundedButton(
-                                  backgroundColor:
-                                      const Color.fromARGB(255, 33, 124, 243),
+                                  backgroundColor: primaryColorBtn,
                                   size: const Size(190, 30),
                                   label: const Text("10/05/2023 20:50",
                                       style: TextStyle(
@@ -171,7 +166,6 @@ class _WelcomeState extends State<Welcome> {
                                           color: Colors.white,
                                           fontWeight: FontWeight.w700)),
                                   radius: 13,
-                                  textColor: Colors.white,
                                   onClick: () {})
                             ],
                           ),
@@ -180,7 +174,6 @@ class _WelcomeState extends State<Welcome> {
                       ),
                     ),
                     radius: 25,
-                    textColor: Colors.black,
                     onClick: () {}),
               )
             ],

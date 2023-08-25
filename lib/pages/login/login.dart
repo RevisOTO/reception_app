@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
+import 'package:reception_app/globals/constants.dart';
 import 'package:reception_app/pages/login/widgets/buttonRounded.dart';
 import 'package:reception_app/pages/welcome/welcome.dart';
 
@@ -12,10 +13,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  // Controllers para los campos de texto
-  final usernameController = TextEditingController();
-  final passwordController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,11 +35,10 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: const EdgeInsets.fromLTRB(0, 60, 0, 20),
             child: RoundedButton(
-                backgroundColor: Color.fromARGB(255, 33, 124, 243),
+                backgroundColor: primaryColorBtn,
                 size: Size(350, 60),
                 label: Text("Sign In with Email"),
                 radius: 30,
-                textColor: Colors.white,
                 onClick: () {}),
           ),
           Row(
@@ -55,7 +51,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       size: Size(160, 50),
                       label: Text("Google"),
                       radius: 30,
-                      textColor: Colors.white,
                       onClick: () {})),
               Padding(
                   padding: EdgeInsets.all(8.0),
@@ -64,7 +59,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       size: Size(160, 50),
                       label: Text("Apple ID"),
                       radius: 30,
-                      textColor: Colors.white,
                       onClick: () {})),
             ],
           ),

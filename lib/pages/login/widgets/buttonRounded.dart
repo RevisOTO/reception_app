@@ -5,7 +5,6 @@ class RoundedButton extends StatefulWidget {
   final Size size;
   final Widget label;
   final double radius;
-  final Color textColor;
   final Function onClick;
   const RoundedButton(
       {super.key,
@@ -13,7 +12,6 @@ class RoundedButton extends StatefulWidget {
       required this.size,
       required this.label,
       required this.radius,
-      required this.textColor,
       required this.onClick});
 
   @override
@@ -27,7 +25,6 @@ class _RoundedButtonState extends State<RoundedButton> {
     Color backgroundColor = widget.backgroundColor;
     Widget label = widget.label;
     double radius = widget.radius;
-    Color textColor = widget.textColor;
     Function onClick = widget.onClick;
     return ElevatedButton(
         style: ButtonStyle(

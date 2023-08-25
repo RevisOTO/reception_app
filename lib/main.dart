@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:reception_app/globals/constants.dart';
+import 'package:reception_app/pages/profile/profile.dart';
+import 'package:reception_app/pages/splash/splash.dart';
 import 'package:reception_app/pages/welcome/welcome.dart';
 import 'pages/login/login.dart';
 
@@ -16,9 +19,9 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(),
       theme: ThemeData(
           appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
-          colorScheme: const ColorScheme(
+          colorScheme: ColorScheme(
               brightness: Brightness.dark,
-              primary: Color.fromARGB(255, 33, 124, 243),
+              primary: primaryColorBtn,
               onPrimary: Colors.white,
               secondary: Colors.black,
               onSecondary: Colors.white,
@@ -41,6 +44,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Welcome());
+    return const Scaffold(body: ProfilePage());
   }
 }
