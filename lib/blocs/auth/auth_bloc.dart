@@ -40,7 +40,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           //
           // var user = await repo.validateSession();
           // if(user != null){
-          //   emit(AuthValidatedUser(user));
+            // emit(AuthValidatedUser(user));
           // }
           // else{
           //   emit(AuthInValidatedUser());

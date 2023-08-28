@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reception_app/blocs/inspection/inspection_bloc.dart';
 import 'package:reception_app/data/network/entities/registration.dart';
-import 'package:reception_app/globals/constants.dart';
 import 'package:reception_app/pages/inspection/widgets/registration_app_bar.dart';
-import 'package:reception_app/pages/inspection/widgets/steps/step_selection_type_inspection.dart';
-import 'package:reception_app/pages/inspection/widgets/title_step.dart';
+import 'package:reception_app/pages/inspection/widgets/steps/step_authorization_phone.dart';
+import 'package:reception_app/pages/inspection/widgets/steps/step_authorization_phone_code.dart';
+import 'package:reception_app/pages/inspection/widgets/steps/step_done_form.dart';
+import 'package:reception_app/pages/inspection/widgets/steps/step_inspection_wheels.dart';
 
 import '../../blocs/auth/auth_bloc.dart';
  
@@ -37,7 +38,7 @@ class InspectionPage extends StatelessWidget {
 
   Widget body(BuildContext context) =>  Scaffold(
     appBar: RegistrationAppBar(),
-    body: StepSelectionTypeInspection(registration),
+    body: StepDoneForm(registration),
     floatingActionButton: FloatingActionButton(
       elevation: 10.0,
       child: const Icon(Icons.arrow_forward),

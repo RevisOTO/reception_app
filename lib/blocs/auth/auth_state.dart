@@ -13,7 +13,9 @@ class AuthValidatedUser extends AuthState {
 
 class AuthInValidatedUser extends AuthState {}
 
-class AuthLoading extends AuthState {}
+class AuthLoading extends AuthState {
+  AuthLoading();
+}
 
 class AuthLoaded extends AuthState {
   final String username;
