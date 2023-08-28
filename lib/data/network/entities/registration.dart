@@ -3,6 +3,8 @@
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+part 'registration.g.dart';
+
 @HiveType(typeId: 4)
 @JsonSerializable()
 class Registration {

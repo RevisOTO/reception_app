@@ -47,6 +47,9 @@ dependencies:
   intl: any
   jwt_decode: ^0.3.1
   json_annotation: ^4.8.1
+  flutter_datetime_picker_plus: ^2.0.1
+  pinput: ^3.0.1
+  qr_flutter: ^4.1.0
  
 
 dev_dependencies:
@@ -77,6 +80,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/truck.gif
+    - assets/back_side.png
+    - assets/front_side.png
+    - assets/floor_side.png
+    - assets/roof_side.png
+    - assets/left_side.png
+    - assets/right_side.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

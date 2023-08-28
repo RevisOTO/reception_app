@@ -25,9 +25,6 @@ class AuthRepository {
     currentUser = daoUser;
     currentAuth = daoAuth;
 
- 
-
-
     return daoUser;
  
   }
