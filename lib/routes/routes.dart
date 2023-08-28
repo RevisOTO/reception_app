@@ -18,7 +18,7 @@ class RouteGenerator {
    final AuthBloc _authBloc = AuthBloc();
    
   // final MainBloc _mainBloc = MainBloc();
-  final InspectionBloc _inspectBloc = InspectionBloc();
+  
 
   Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -42,7 +42,7 @@ class RouteGenerator {
         if (args is Registration) {
           return MaterialPageRoute(
             builder: (_) => BlocProvider<InspectionBloc>.value(
-              value: _inspectBloc,
+              value: InspectionBloc(args),
               child: InspectionPage(args),
             ),
           );

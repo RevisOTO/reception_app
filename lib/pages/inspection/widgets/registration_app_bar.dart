@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:reception_app/blocs/inspection/inspection_bloc.dart';
 import 'package:reception_app/globals/constants.dart';
 
 class RegistrationAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -20,7 +22,7 @@ class _RegistrationAppBarState extends State<RegistrationAppBar>{
           padding: const EdgeInsets.all(5), child: IconButton.filledTonal(
           icon: const Icon(Icons.arrow_back),
           onPressed: () { 
-              //TODO back
+              BlocProvider.of<InspectionBloc>(context).add(StepCancelled());
           },
         ),);
       },

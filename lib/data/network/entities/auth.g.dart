@@ -20,19 +20,21 @@ class AuthAdapter extends TypeAdapter<Auth> {
       accessToken: fields[1] as String?,
       refreshToken: fields[2] as String?,
       idUser: fields[0] as String?,
-    );
+    )..refreshToken2 = fields[3] as String?;
   }
 
   @override
   void write(BinaryWriter writer, Auth obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.idUser)
       ..writeByte(1)
       ..write(obj.accessToken)
       ..writeByte(2)
-      ..write(obj.refreshToken);
+      ..write(obj.refreshToken)
+      ..writeByte(3)
+      ..write(obj.refreshToken2);
   }
 
   @override
@@ -54,10 +56,11 @@ Auth _$AuthFromJson(Map<String, dynamic> json) => Auth(
       accessToken: json['accessToken'] as String?,
       refreshToken: json['refreshToken'] as String?,
       idUser: json['idUser'] as String?,
-    );
+    )..refreshToken2 = json['refreshToken2'] as String?;
 
 Map<String, dynamic> _$AuthToJson(Auth instance) => <String, dynamic>{
       'idUser': instance.idUser,
       'accessToken': instance.accessToken,
       'refreshToken': instance.refreshToken,
+      'refreshToken2': instance.refreshToken2,
     };

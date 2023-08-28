@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reception_app/data/network/entities/registration.dart';
+import 'package:reception_app/globals/globals.dart';
 
 import '../../blocs/auth/auth_bloc.dart';
  
@@ -13,22 +14,24 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       body: BlocConsumer<AuthBloc, AuthState>(
         listener: (context, state) {
-          if (state is AuthError) {
+           if (state is AuthError || state is AuthLoading) {
             buildErrorLayout(context);
           } else if (state is AuthValidatedUser) {
+            
             Navigator.of(context).pushNamedAndRemoveUntil('/inspection', arguments: Registration(),(r) => false);
           } else if (state is AuthInValidatedUser) {
+            
             Navigator.of(context).pushNamedAndRemoveUntil('/login',(r) => false);
           }
         },
         builder: (context, state) {
           if(state is AuthInitial){
-             BlocProvider.of<AuthBloc>(context).add(AuthUser());
+            BlocProvider.of<AuthBloc>(context).add(AuthUser());
           }
           if (state is AuthLoading) {
              return body(context,true);
           } else {
-            return body(context,true);
+            return const Text("NORMAL");
           }
         },
       ),

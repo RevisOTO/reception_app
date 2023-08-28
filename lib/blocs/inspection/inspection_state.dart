@@ -1,66 +1,74 @@
 part of 'inspection_bloc.dart';
 
 
- 
-abstract class InspectionState {}
+abstract class InspectionState {
+ final int step;
+ final Registration registration;
 
-class InspectionInitial extends InspectionState {}
-
-class InspectionStepType extends InspectionState {
-  InspectionStepType();
+  InspectionState(this.step, this.registration);
 }
 
+class InspectionInitial extends InspectionState {
+  InspectionInitial(super.step, super.registration);
+}
+
+class InspectionCancel extends InspectionState {
+  InspectionCancel(super.step, super.registration);
+  
+}
+ 
 class InspectionStepFormNormalEntry extends InspectionState {
-  InspectionStepFormNormalEntry();
+  InspectionStepFormNormalEntry(super.step, super.registration);
 }
 
 class InspectionStepFormCrossborderEntry extends InspectionState {
-  InspectionStepFormCrossborderEntry();
+  InspectionStepFormCrossborderEntry(super.step, super.registration);
 }
 
 class InspectionStepFormExportationEntry extends InspectionState {
-  InspectionStepFormExportationEntry();
+  InspectionStepFormExportationEntry(super.step, super.registration);
 }
 
 class InspectionStepFormExit extends InspectionState {
-  InspectionStepFormExit();
+  InspectionStepFormExit(super.step, super.registration);
 }
 
 class InspectionStepBoxRevision extends InspectionState {
-  InspectionStepBoxRevision();
+  InspectionStepBoxRevision(super.step, super.registration);
 }
 
 class InspectionStepBoxWheels extends InspectionState {
-  InspectionStepBoxWheels();
+  InspectionStepBoxWheels(super.step, super.registration);
 }
 
 
 class InspectionStepFormValidation extends InspectionState {
-  InspectionStepFormValidation();
+  InspectionStepFormValidation(super.step, super.registration);
 }
  
 class InspectionStepFormConfirmation extends InspectionState {
-  InspectionStepFormConfirmation();
+  InspectionStepFormConfirmation(super.step, super.registration);
 }
   
 
 class InspectionProblemsConnection extends InspectionState {
-  InspectionProblemsConnection();
+  InspectionProblemsConnection(super.step, super.registration);
 }
     
 class InspectionStepDoneResults extends InspectionState {
-  InspectionStepDoneResults();
+  InspectionStepDoneResults(super.step, super.registration);
 }
+ 
 
-class InspectionInValidatedUser extends InspectionState {}
-
-class InspectionLoading extends InspectionState {}
+class InspectionLoading extends InspectionState {
+  InspectionLoading(super.step, super.registration);
+}
 
 class InspectionLoaded extends InspectionState {
-  final String username;
-  InspectionLoaded(
-    this.username,
-  );
+  InspectionLoaded(super.step, super.registration);
+  
 }
 
-class InspectionError extends InspectionState {}
+class InspectionError extends InspectionState {
+  InspectionError(super.step, super.registration);
+}
