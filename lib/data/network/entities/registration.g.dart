@@ -47,13 +47,14 @@ class RegistrationAdapter extends TypeAdapter<Registration> {
       releaseAccept: fields[27] as bool?,
       exitDateTime: fields[29] as String?,
       emailInspector: fields[30] as String?,
+      inspectionStep: (fields[31] as List?)?.cast<InspectionStep>(),
     );
   }
 
   @override
   void write(BinaryWriter writer, Registration obj) {
     writer
-      ..writeByte(30)
+      ..writeByte(31)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -113,7 +114,9 @@ class RegistrationAdapter extends TypeAdapter<Registration> {
       ..writeByte(29)
       ..write(obj.exitDateTime)
       ..writeByte(30)
-      ..write(obj.emailInspector);
+      ..write(obj.emailInspector)
+      ..writeByte(31)
+      ..write(obj.inspectionStep);
   }
 
   @override
@@ -162,6 +165,9 @@ Registration _$RegistrationFromJson(Map<String, dynamic> json) => Registration(
       releaseAccept: json['releaseAccept'] as bool?,
       exitDateTime: json['exitDateTime'] as String?,
       emailInspector: json['emailInspector'] as String?,
+      inspectionStep: (json['inspectionStep'] as List<dynamic>?)
+          ?.map((e) => InspectionStep.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$RegistrationToJson(Registration instance) =>
@@ -196,4 +202,5 @@ Map<String, dynamic> _$RegistrationToJson(Registration instance) =>
       'releaseAccept': instance.releaseAccept,
       'exitDateTime': instance.exitDateTime,
       'emailInspector': instance.emailInspector,
+      'inspectionStep': instance.inspectionStep,
     };

@@ -13,6 +13,9 @@ class StepExportationInspectionForm extends StatelessWidget {
   final TextEditingController dateEntry = TextEditingController();
   final TextEditingController dateLoad = TextEditingController();
   final TextEditingController dateExit = TextEditingController();
+  final TextEditingController controllerNotes = TextEditingController(text: "");
+  final TextEditingController controllerSeals = TextEditingController(text: "");
+
   final TextEditingController dateTransfer = TextEditingController();
   StepExportationInspectionForm(this.registration,{super.key});
 
@@ -35,8 +38,12 @@ class StepExportationInspectionForm extends StatelessWidget {
         DateTimeInput(title: "Fecha del Transferr",dateinput: dateTransfer,callback: (date,stringDate) => {
           dateTransfer.text = stringDate
         }),
-        MultilineTextInput(title: "Sellos"),
-        MultilineTextInput(title: "Notas"),
+        MultilineTextInput(title: "Sellos",controller: controllerSeals,value: registration.seals, callback: (value) {
+            registration.notes = value;
+          }),
+        MultilineTextInput(title: "Notas",controller: controllerNotes,value: registration.notes, callback: (value) {
+            registration.notes = value;
+          },),
          ButtonWithIcon(icon: Icons.arrow_forward,title: AppLocalizations.of(context)!.next,callback: () => {
           BlocProvider.of<InspectionBloc>(context).add(StepContinue())
         },)

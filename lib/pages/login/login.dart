@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:reception_app/pages/login/widgets/buttonRounded.dart';
-import 'package:reception_app/pages/welcome/welcome.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -38,9 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             margin: const EdgeInsets.fromLTRB(0, 60, 0, 20),
             child: RoundedButton(
-                backgroundColor: Color.fromARGB(255, 33, 124, 243),
-                size: Size(350, 60),
-                label: Text("Sign In with Email"),
+                backgroundColor: const Color.fromARGB(255, 33, 124, 243),
+                size: const Size(350, 60),
+                label: const Text("Sign In with Email"),
                 radius: 30,
                 textColor: Colors.white,
                 onClick: () {}),
@@ -49,20 +48,20 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: RoundedButton(
                       backgroundColor: Colors.black,
-                      size: Size(160, 50),
-                      label: Text("Google"),
+                      size: const Size(160, 50),
+                      label: const Text("Google"),
                       radius: 30,
                       textColor: Colors.white,
                       onClick: () {})),
               Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: RoundedButton(
                       backgroundColor: Colors.black,
-                      size: Size(160, 50),
-                      label: Text("Apple ID"),
+                      size: const Size(160, 50),
+                      label: const Text("Apple ID"),
                       radius: 30,
                       textColor: Colors.white,
                       onClick: () {})),

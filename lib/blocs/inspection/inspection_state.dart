@@ -69,6 +69,13 @@ class InspectionLoaded extends InspectionState {
   
 }
 
+ 
 class InspectionError extends InspectionState {
-  InspectionError(super.step, super.registration);
+  final String message;
+
+  InspectionError(super.step, super.registration, this.message);
+ 
+
+  @override
+  String toString() => 'InspectionError';
 }

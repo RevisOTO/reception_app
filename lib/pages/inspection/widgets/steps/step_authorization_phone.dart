@@ -20,7 +20,9 @@ class StepAuthorizationPhoneForm extends StatelessWidget {
         TitleStep(AppLocalizations.of(context)!.inspectionAuthorization),
         DescriptionStep(AppLocalizations.of(context)!.inspectionAuthorizationDescription),
         const HeightSpacer(myHeight:20),
-        PhoneInput(title: "Numero de Telefono"),
+        PhoneInput(title: "Numero de Telefono",value: registration.releasePhone, callback: (value) {
+            //registration.notes = value;
+        }),
         const HeightSpacer(myHeight:20),
         ButtonWithIcon(icon: Icons.sms,title: AppLocalizations.of(context)!.inspectionSendCodeSMS,callback: () => {},),
         const Text("OR"),

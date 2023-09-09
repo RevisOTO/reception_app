@@ -20,9 +20,9 @@ class LoadingWidget extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             color: Colors.grey.withOpacity(0.55),
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 CircularProgressIndicator(),
                 WidthSpacer(myWidth: 25.50),
                 Text("Loading..."),

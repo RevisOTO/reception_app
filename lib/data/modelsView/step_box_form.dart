@@ -1,13 +1,21 @@
+import 'package:reception_app/data/network/entities/inspection_box.dart';
+
 class StepBoxForm {
   String title;
   StepFormType type;
   String imagePath;
-  bool? active;
-  String? notes;
-  StepBoxForm({required this.title,required this.type,required this.imagePath});
+  InspectionBox? inspectionBox;
+  StepBoxForm({required this.title,required this.type,required this.imagePath,this.inspectionBox});
 }
 
 
 enum StepFormType {
-   leftSide,rightSide,frontSide,backSide,floorSide,roofSide
+   leftSideBox,
+   rightSideBox,
+   frontSideBox,
+   backSideBox,
+   floorSideBox,
+   roofSideBox,
+   leftSideWheel,
+   rightSideWheel,
 }

@@ -50,6 +50,7 @@ dependencies:
   flutter_datetime_picker_plus: ^2.0.1
   pinput: ^3.0.1
   qr_flutter: ^4.1.0
+  geolocator: ^10.0.1
  
 
 dev_dependencies:

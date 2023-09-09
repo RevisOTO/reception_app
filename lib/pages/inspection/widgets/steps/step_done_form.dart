@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pinput/pinput.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:reception_app/data/network/entities/registration.dart';
 import 'package:reception_app/pages/inspection/widgets/description_step.dart';
 import 'package:reception_app/pages/inspection/widgets/title_step.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:reception_app/widgets/button_with_icon.dart';
 import 'package:reception_app/widgets/button_with_icon_secondary.dart';
 import 'package:reception_app/widgets/spacers.dart';
 

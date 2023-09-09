@@ -4,7 +4,7 @@ import 'package:reception_app/blocs/inspection/inspection_bloc.dart';
 import 'package:reception_app/globals/constants.dart';
 
 class RegistrationAppBar extends StatefulWidget implements PreferredSizeWidget {
-    RegistrationAppBar({super.key}) : preferredSize = Size.fromHeight(kToolbarHeight);
+    const RegistrationAppBar({super.key}) : preferredSize = const Size.fromHeight(kToolbarHeight);
     @override
     final Size preferredSize; // default is 56.0
     @override

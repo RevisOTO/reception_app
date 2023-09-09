@@ -10,7 +10,8 @@ import 'package:reception_app/widgets/button_with_icon.dart';
 import '../autocomplete_input.dart';
 class StepExitInspectionForm extends StatelessWidget {
   final Registration registration;
-  const StepExitInspectionForm(this.registration,{super.key});
+  final TextEditingController controllerNotes = TextEditingController(text: "");
+  StepExitInspectionForm(this.registration,{super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class StepExitInspectionForm extends StatelessWidget {
         TitleStep(AppLocalizations.of(context)!.typeInspectionExit),
         AutocompleteInput(title: "Selecciona un Camion"),
         AutocompleteInput(title: "Selecciona un operador"),
-        MultilineTextInput(title: "Notas"),
+        MultilineTextInput(title: "Notas",controller: controllerNotes,value: registration.notes, callback: (value) {
+            //registration.notes = value;
+          }),
         ButtonWithIcon(icon: Icons.arrow_forward,title: AppLocalizations.of(context)!.next,callback: () => {
           BlocProvider.of<InspectionBloc>(context).add(StepContinue())
         },)
