@@ -2,6 +2,7 @@
 
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:reception_app/data/network/entities/inspection_step.dart';
 
 part 'registration.g.dart';
 
@@ -68,6 +69,8 @@ class Registration {
   String? exitDateTime;
    @HiveField(30)
   String? emailInspector;
+   @HiveField(31)
+  List<InspectionStep>? inspectionStep;
 
 
   Registration({
@@ -101,8 +104,9 @@ class Registration {
      this.releaseAccept,
      this.exitDateTime,
      this.emailInspector,
+     this.inspectionStep
   });
 
-  
+  factory Registration.fromJson(Map<String, dynamic> json) => _$RegistrationFromJson(json);
  
 }

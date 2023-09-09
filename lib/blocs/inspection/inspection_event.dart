@@ -24,4 +24,24 @@ class StepContinue extends InspectionEvent {
   @override
   String toString() => 'StepContinue';
 }
+
+class StepUpdateInspectionBox extends InspectionEvent {
+  final StepInspectionBoxForm step;
+
+  const StepUpdateInspectionBox({required this.step});
+
+  @override
+  String toString() => 'StepUpdateInspectionBox';
+}
+
+
+class StepUpdateInspectionWheel extends InspectionEvent {
+  final StepInspectionWheelForm step;
+
+  const StepUpdateInspectionWheel({required this.step});
+  
+  @override
+  String toString() => 'StepUpdateInspectionWheel';
+}
+
  

@@ -73,6 +73,7 @@ class _StepInspectionBoxState extends State<StepInspectionBox> {
               content: StepInspectionBoxForm(StepBoxForm(
                 title: AppLocalizations.of(context)!.inspectionBoxLeftSide,
                 type: StepFormType.leftSide,
+                active: true,
                 imagePath: 'assets/left_side.png',
               )),
             ),
@@ -81,6 +82,7 @@ class _StepInspectionBoxState extends State<StepInspectionBox> {
               content: StepInspectionBoxForm(StepBoxForm(
                 title: AppLocalizations.of(context)!.inspectionBoxBackSide,
                 type: StepFormType.backSide,
+                active: true,
                 imagePath: 'assets/back_side.png',
               )),
             ),
@@ -89,6 +91,7 @@ class _StepInspectionBoxState extends State<StepInspectionBox> {
               content: StepInspectionBoxForm(StepBoxForm(
                 title: AppLocalizations.of(context)!.inspectionBoxRightSide,
                 type: StepFormType.rightSide,
+                active: true,
                 imagePath: 'assets/right_side.png',
               )),
             ),
@@ -97,6 +100,7 @@ class _StepInspectionBoxState extends State<StepInspectionBox> {
               content: StepInspectionBoxForm(StepBoxForm(
                 title: AppLocalizations.of(context)!.inspectionBoxFrontSide,
                 type: StepFormType.frontSide,
+                active: true,
                 imagePath: 'assets/front_side.png',
               )),
             ),
@@ -106,6 +110,7 @@ class _StepInspectionBoxState extends State<StepInspectionBox> {
               content: StepInspectionBoxForm(StepBoxForm(
                 title: AppLocalizations.of(context)!.inspectionBoxFloor,
                 type: StepFormType.floorSide,
+                active: true,
                 imagePath: 'assets/floor_side.png',
               )),
             ),
@@ -114,6 +119,7 @@ class _StepInspectionBoxState extends State<StepInspectionBox> {
               content: StepInspectionBoxForm(StepBoxForm(
                 title: AppLocalizations.of(context)!.inspectionBoxRoof,
                 type: StepFormType.roofSide,
+                active: true,
                 imagePath: 'assets/roof_side.png',
               )),
             ),

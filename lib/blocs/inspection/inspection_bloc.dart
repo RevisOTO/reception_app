@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 // ignore: depend_on_referenced_packages
 import 'package:meta/meta.dart';
 import 'package:reception_app/data/modelsView/inspection_type.dart';
+import 'package:reception_app/pages/inspection/widgets/steps/step_inspection_box_form.dart';
+import 'package:reception_app/pages/inspection/widgets/steps/step_inspection_wheel_form.dart';
 
 import '../../data/network/entities/registration.dart';
 
@@ -15,7 +17,10 @@ class InspectionBloc extends Bloc<InspectionEvent, InspectionState> {
   InspectionBloc(this.registration)
       : super(InspectionInitial(0, registration)) {
     on<InspectionEvent>((event, emit) async {
-      if (event is StepContinue || event is StepTypeEntryTapped) {
+      if (event is StepUpdateInspectionBox){
+       
+      }
+      else if (event is StepContinue || event is StepTypeEntryTapped) {
         if (currentStep < maxSteps) {
           currentStep++;
         }
@@ -63,4 +68,9 @@ class InspectionBloc extends Bloc<InspectionEvent, InspectionState> {
       }
     });
   }
+
+
+
+
+
 }

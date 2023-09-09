@@ -40,7 +40,7 @@ class InspectionPage extends StatelessWidget {
   }
 
   Widget body(BuildContext context) => Scaffold(
-        appBar: RegistrationAppBar(),
+        appBar: const RegistrationAppBar(),
         body: BlocConsumer<InspectionBloc, InspectionState>(
           listener: (context, state) {
             /*if (state is InspectionError) {

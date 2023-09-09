@@ -16,7 +16,7 @@ class StepInspectionBoxForm extends StatelessWidget {
             height: 200,
             width: 400,
          ),
-        CheckInput(title:stepForm.title, active: stepForm.active ?? false,callback: (value) => {
+        CheckInput(title:stepForm.title, active: stepForm.active ,callback: (value) => {
 
         },),
         MultilineTextInput(title: "Notas")

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reception_app/globals/constants.dart';
  
 
 class CheckInput extends StatelessWidget {

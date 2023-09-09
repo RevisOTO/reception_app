@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:reception_app/data/network/entities/registration.dart';
-import 'package:reception_app/globals/globals.dart';
 
 import '../../blocs/auth/auth_bloc.dart';
  

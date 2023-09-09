@@ -6,7 +6,7 @@ class TitleStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding: EdgeInsets.only(left: 12,right: 12,top: 12,bottom: 24),
+    return Padding(padding: const EdgeInsets.only(left: 12,right: 12,top: 12,bottom: 24),
     child: Text(
       title ?? "",
       style: const TextStyle(
