@@ -21,14 +21,7 @@ class InspectionBloc extends Bloc<InspectionEvent, InspectionState> {
   InspectionBloc(this._registration)
       : super(InspectionInitial(0, _registration)) {
     on<InspectionEvent>((event, emit) async {
-      if (event is StepUpdateInspectionBox){
-        await updateBoxStepInspection(event,emit);
-
-      }
-      else if (event is StepUpdateInspectionBox){
-        await updateBoxStepInspection(event,emit);
-      }
-      else if (event is StepContinue || event is StepTypeEntryTapped) {
+      if (event is StepContinue || event is StepTypeEntryTapped) {
         if (currentStep < maxSteps) {
           currentStep++;
         }
@@ -109,50 +102,4 @@ class InspectionBloc extends Bloc<InspectionEvent, InspectionState> {
     }
 
   }
-
-  Future<void>  updateWheelStepInspection(StepUpdateInspectionWheel event,Emitter<InspectionState> emitter) async {
-    try{
-     //Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-      var step = getCurrentStep(event.step.type.toString());
-      if(step.order == -1){
-        step.order = _registration.inspectionStep!.length + 1;
-      }
-       step.longitude = 0.0;//position.longitude;
-      step.latitude = 0.0;//position.latitude;
-      step.inspectionWheel = InspectionWheel(
-        notes: event.step.inspectionWheel?.notes,
-        checkFrontExterior: event.step.inspectionWheel?.checkFrontExterior, 
-        checkFrontInterior: event.step.inspectionWheel?.checkFrontInterior, 
-        checkBackwardExterior: event.step.inspectionWheel?.checkBackwardExterior, 
-        checkBackwardInterior: event.step.inspectionWheel?.checkBackwardInterior,
-        id: -1 
-      );
-      if(step.id == -1){
-      _registration.inspectionStep?.add(step);
-      }else{
-        _registration.inspectionStep?[_registration.inspectionStep!.indexWhere((x) => x.id == step.id)] = step;
-      }
-    }
-    catch(ex){
-        emitter(InspectionError(currentStep,_registration ,"Ocurrio un problema al guardar"));
-    }
-
-  }
- 
-  InspectionStep getCurrentStep(String step) {
-    var newStep = InspectionStep(
-        type: step.toString(),
-        order: -1,
-        latitude: 0,
-        longitude: 0,);
-      if(_registration.inspectionStep == null){
-        return newStep;
-      }
-      return _registration.inspectionStep!.firstWhere((x) => x.type == step.toString(),orElse: () => newStep);
-  }
-
-
-
-
-
 }

@@ -44,5 +44,4 @@ class StepUpdateInspectionWheel extends InspectionEvent {
   String toString() => 'StepUpdateInspectionWheel';
 }
 
-
  

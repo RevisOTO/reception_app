@@ -2,10 +2,6 @@
 
 import 'package:hive/hive.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:reception_app/data/modelsView/step_box_form.dart';
-import 'package:reception_app/data/network/entities/inspection_box.dart';
-import 'package:reception_app/data/network/entities/inspection_step.dart';
-import 'package:reception_app/data/network/entities/inspection_wheel.dart';
 
 part 'registration.g.dart';
 
@@ -107,25 +103,8 @@ class Registration {
      this.releaseAccept,
      this.exitDateTime,
      this.emailInspector,
-     this.inspectionStep 
-  }){
-    generateSteps();
-  }
+  });
 
-  generateSteps() {
-    if(inspectionStep == null || inspectionStep!.isEmpty ){
-      inspectionStep = [];
-      inspectionStep?.add(InspectionStep(type: StepFormType.leftSideBox.toString(), order: 1, latitude: 0, longitude: 0,inspectionBox: InspectionBox()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.rightSideBox.toString(), order: 1, latitude: 0, longitude: 0,inspectionBox: InspectionBox()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.frontSideBox.toString(), order: 1, latitude: 0, longitude: 0,inspectionBox: InspectionBox()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.backSideBox.toString(), order: 1, latitude: 0, longitude: 0,inspectionBox: InspectionBox()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.floorSideBox.toString(), order: 1, latitude: 0, longitude: 0,inspectionBox: InspectionBox()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.roofSideBox.toString(), order: 1, latitude: 0, longitude: 0,inspectionBox: InspectionBox()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.leftSideWheel.toString(), order: 1, latitude: 0, longitude: 0,inspectionWheel: InspectionWheel()));
-      inspectionStep?.add(InspectionStep(type: StepFormType.rightSideWheel.toString(), order: 1, latitude: 0, longitude: 0,inspectionWheel: InspectionWheel()));
-    }
-  }
-
-  factory Registration.fromJson(Map<String, dynamic> json) => _$RegistrationFromJson(json);
+  
  
 }
